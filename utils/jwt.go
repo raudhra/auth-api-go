@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"net/http"
 	"os"
 	"time"
 
@@ -20,4 +21,8 @@ func VerifyJWT(tokenString string) (*jwt.Token, error) {
 	return jwt.Parse(tokenString, func(t *jwt.Token) (interface{}, error) {
 		return []byte(os.Getenv("JWT_SECRET")), nil
 	})
+}
+
+func Profile(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Protected Profile Data"))
 }

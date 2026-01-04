@@ -13,7 +13,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			http.Error(w, "Header is empty: Unauthorized", http.StatusUnauthorized)
 			return
 		}
-		tokenString := strings.Replace("Bearer ", "", 1)
+		tokenString := strings.Replace(header, "Bearer ", "", 1)
 
 		token, err := utils.VerifyJWT(tokenString)
 		if err != nil || !token.Valid {
