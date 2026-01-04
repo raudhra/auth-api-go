@@ -1,0 +1,27 @@
+# 1. THE MOST IMPORTANT ONE: Security Secrets
+.env
+*.env.local
+
+# 2. Go Specifics
+# Binaries (the compiled program)
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 3. Dependencies
+# Usually we keep go.mod and go.sum, but ignore the vendor folder 
+# if you aren't using vendoring
+vendor/
+
+# 4. OS and IDE specific files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# 5. Logs and Temp files
+*.log
+tmp/
