@@ -14,12 +14,12 @@ func Connect() {
 	var err error
 
 	DB, err = sql.Open("postgres", os.Getenv("DB_URL"))
-	if err != nill {
+	if err != nil {
 		log.Fatal(err)
 	}
 
 	err = DB.Ping()
-	if err != nill {
+	if err != nil {
 		log.Fatal("Database Is Not Reachable")
 	}
 
